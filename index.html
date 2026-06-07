@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أسهل الطريق — عرض المشروع</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --orange:#DC5318;
+  --cream:#F4ECC2;
+  --light:#ETEOEA;
+  --light2:#ECEOEA;
+  --slate:#323A44;
+  --white:#FFFFFF;
+  --bg:#FBFAF6;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased;}
+body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--slate);line-height:1.7;overflow-x:hidden;}
+.wrap{max-width:1100px;margin:0 auto;padding:0 28px;}
+
+/* HERO */
+.hero{position:relative;padding:90px 0 70px;overflow:hidden;background:var(--slate);}
+.hero::before{content:'';position:absolute;top:-160px;left:-120px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(220,83,24,.28),transparent 68%);}
+.hero::after{content:'';position:absolute;bottom:-220px;right:-100px;width:520px;height:520px;border-radius:50%;border:1px solid rgba(244,236,194,.08);}
+.hero .wrap{position:relative;z-index:2;}
+.brand-mark{display:flex;align-items:center;gap:13px;margin-bottom:42px;}
+.logo-badge{width:46px;height:46px;border-radius:13px;background:var(--orange);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(220,83,24,.4);}
+.logo-badge svg{width:24px;height:24px;}
+.brand-name{font-size:17px;font-weight:700;color:var(--cream);}
+.brand-sub{font-size:11px;color:rgba(244,236,194,.5);}
+.hero-tag{display:inline-block;font-size:12px;font-weight:600;color:var(--orange);background:rgba(220,83,24,.14);border:1px solid rgba(220,83,24,.3);padding:6px 16px;border-radius:30px;margin-bottom:26px;}
+.hero h1{font-size:58px;font-weight:800;color:var(--white);line-height:1.15;margin-bottom:18px;letter-spacing:-1px;}
+.hero h1 span{color:var(--orange);}
+.hero p{font-size:18px;color:rgba(244,236,194,.65);max-width:560px;font-weight:300;}
+.hero-stats{display:flex;gap:42px;margin-top:46px;}
+.hstat .n{font-size:30px;font-weight:800;color:var(--cream);}
+.hstat .l{font-size:12px;color:rgba(244,236,194,.45);}
+
+/* SECTION */
+.sec{padding:80px 0;}
+.sec-label{font-size:13px;font-weight:700;color:var(--orange);letter-spacing:1px;margin-bottom:10px;}
+.sec-title{font-size:38px;font-weight:800;color:var(--slate);letter-spacing:-.5px;margin-bottom:14px;}
+.sec-desc{font-size:17px;color:#6B7280;font-weight:300;max-width:580px;}
+
+/* IDEA CARDS */
+.idea-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;}
+.idea-card{background:var(--white);border-radius:22px;padding:30px 26px;border:1px solid #EFEBDD;transition:transform .3s,box-shadow .3s;}
+.idea-card:hover{transform:translateY(-6px);box-shadow:0 22px 50px rgba(50,58,68,.1);}
+.idea-ico{width:54px;height:54px;border-radius:15px;background:linear-gradient(135deg,var(--orange),#E8743F);display:flex;align-items:center;justify-content:center;margin-bottom:20px;box-shadow:0 8px 20px rgba(220,83,24,.28);}
+.idea-ico svg{width:27px;height:27px;}
+.idea-card h3{font-size:19px;font-weight:700;margin-bottom:9px;}
+.idea-card p{font-size:14px;color:#6B7280;font-weight:300;line-height:1.7;}
+
+/* HOW IT WORKS */
+.steps{background:var(--slate);border-radius:30px;padding:60px 48px;margin-top:10px;position:relative;overflow:hidden;}
+.steps::before{content:'';position:absolute;top:-100px;right:-60px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(220,83,24,.18),transparent 70%);}
+.steps-head{position:relative;z-index:2;margin-bottom:44px;}
+.steps-head .sec-label{color:var(--orange);}
+.steps-head h2{font-size:32px;font-weight:800;color:var(--white);}
+.steps-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative;z-index:2;}
+.step{text-align:center;position:relative;}
+.step-num{width:60px;height:60px;border-radius:18px;background:rgba(244,236,194,.08);border:1px solid rgba(244,236,194,.16);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;}
+.step-num svg{width:28px;height:28px;}
+.step.accent .step-num{background:var(--orange);border-color:var(--orange);box-shadow:0 10px 28px rgba(220,83,24,.42);}
+.step h4{font-size:16px;font-weight:700;color:var(--cream);margin-bottom:6px;}
+.step p{font-size:12.5px;color:rgba(244,236,194,.5);font-weight:300;}
+.step-badge{display:inline-block;font-size:10px;font-weight:600;color:var(--orange);background:rgba(220,83,24,.16);padding:3px 10px;border-radius:20px;margin-top:8px;}
+
+/* SCREENS */
+.screens-sec{background:linear-gradient(180deg,var(--bg),#F2EFE4);}
+.phones{display:flex;gap:30px;overflow-x:auto;padding:50px 4px 30px;scroll-snap-type:x mandatory;}
+.phones::-webkit-scrollbar{height:6px;}
+.phones::-webkit-scrollbar-thumb{background:#D8D2BE;border-radius:3px;}
+.phone{flex:0 0 268px;scroll-snap-align:center;}
+.device{width:268px;height:560px;background:var(--slate);border-radius:42px;padding:11px;box-shadow:0 30px 70px rgba(50,58,68,.24);position:relative;}
+.device::before{content:'';position:absolute;top:22px;left:50%;transform:translateX(-50%);width:90px;height:26px;background:var(--slate);border-radius:16px;z-index:20;}
+.scr{width:100%;height:100%;background:var(--bg);border-radius:32px;overflow:hidden;position:relative;}
+.phone-label{text-align:center;margin-top:18px;font-size:14px;font-weight:600;color:var(--slate);}
+.phone-label span{display:block;font-size:11px;color:#9CA3AF;font-weight:300;margin-top:2px;}
+
+/* In-screen UI */
+.sb{display:flex;justify-content:space-between;padding:14px 20px 6px;font-size:11px;font-weight:600;color:var(--slate);}
+.sbody{padding:8px 16px;}
+.s-h{font-size:19px;font-weight:800;color:var(--slate);margin:6px 0 3px;}
+.s-sub{font-size:11px;color:#9CA3AF;margin-bottom:14px;}
+
+/* search card */
+.scard{background:var(--white);border-radius:20px;padding:15px;box-shadow:0 8px 26px rgba(50,58,68,.08);}
+.fld{display:flex;align-items:center;gap:9px;padding:11px 12px;border-radius:13px;background:var(--bg);margin-bottom:8px;}
+.fld .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.fld .ft{font-size:9px;color:#9CA3AF;}
+.fld .fv{font-size:13px;font-weight:600;color:var(--slate);}
+.fld-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.btn-pri{background:var(--orange);color:#fff;text-align:center;padding:13px;border-radius:13px;font-size:13px;font-weight:700;margin-top:5px;box-shadow:0 8px 20px rgba(220,83,24,.3);}
+.swap{width:30px;height:30px;border-radius:10px;background:var(--white);border:1px solid #EEE8D6;display:flex;align-items:center;justify-content:center;margin:-13px auto;position:relative;z-index:3;}
+
+/* flight result card */
+.fr{background:var(--white);border-radius:17px;padding:14px;margin-bottom:11px;box-shadow:0 4px 16px rgba(50,58,68,.06);}
+.fr.best{border:1.5px solid var(--orange);}
+.fr-badge{font-size:8px;font-weight:700;color:#fff;background:var(--orange);padding:2px 8px;border-radius:6px;display:inline-block;margin-bottom:9px;}
+.fr-top{display:flex;align-items:center;gap:8px;margin-bottom:11px;}
+.al-logo{width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;}
+.al-name{font-size:12px;font-weight:600;}
+.al-sub{font-size:9px;color:#9CA3AF;}
+.fr-times{display:flex;align-items:center;justify-content:space-between;}
+.tm{font-size:18px;font-weight:800;color:var(--slate);}
+.ap{font-size:9px;color:#9CA3AF;}
+.fr-mid{flex:1;text-align:center;}
+.fr-mid .d{font-size:9px;color:#9CA3AF;}
+.fr-line{height:1.5px;background:#E6E1D0;position:relative;margin:5px 12px;}
+.fr-line::after{content:'✈';position:absolute;top:-7px;right:42%;font-size:9px;color:var(--orange);}
+.fr-bot{display:flex;justify-content:space-between;align-items:flex-end;margin-top:12px;padding-top:11px;border-top:1px solid #F0ECE0;}
+.pr{font-size:17px;font-weight:800;color:var(--orange);}
+.pr-l{font-size:9px;color:#9CA3AF;}
+.sel-btn{font-size:10px;font-weight:700;color:#fff;background:var(--slate);padding:7px 16px;border-radius:9px;}
+
+/* detail */
+.dhead{background:var(--slate);margin:-8px -16px 14px;padding:22px 18px;border-radius:0 0 26px 26px;}
+.dhead .r{display:flex;align-items:center;justify-content:space-between;color:#fff;}
+.dhead .tm{color:#fff;font-size:21px;}
+.dhead .ap{color:rgba(244,236,194,.55);}
+.dhead .mid{text-align:center;color:rgba(244,236,194,.6);font-size:10px;}
+.dhead .pl{height:1.5px;background:rgba(244,236,194,.2);margin:6px 14px;position:relative;}
+.dhead .pl::after{content:'✈';position:absolute;top:-7px;right:42%;font-size:10px;color:var(--orange);}
+.amen{display:flex;gap:7px;margin:13px 0;}
+.am{flex:1;background:var(--white);border-radius:13px;padding:11px 6px;text-align:center;box-shadow:0 3px 12px rgba(50,58,68,.05);}
+.am svg{width:18px;height:18px;margin-bottom:5px;}
+.am .t{font-size:10px;font-weight:600;}
+.psum{background:var(--white);border-radius:16px;padding:14px;box-shadow:0 4px 16px rgba(50,58,68,.06);}
+.prow{display:flex;justify-content:space-between;font-size:11px;color:#6B7280;margin-bottom:7px;}
+.ptot{display:flex;justify-content:space-between;font-size:14px;font-weight:800;color:var(--slate);padding-top:9px;border-top:1px solid #F0ECE0;}
+.ptot .v{color:var(--orange);}
+
+/* passenger form */
+.inp{background:var(--white);border-radius:13px;padding:11px 13px;margin-bottom:9px;box-shadow:0 3px 12px rgba(50,58,68,.05);}
+.inp .l{font-size:9px;color:#9CA3AF;margin-bottom:2px;}
+.inp .v{font-size:13px;font-weight:600;color:var(--slate);}
+.inp.ph .v{color:#C4C0B2;}
+.steps-mini{display:flex;align-items:center;gap:5px;margin-bottom:16px;}
+.sm{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;}
+.sm.done{background:var(--orange);color:#fff;}
+.sm.cur{background:var(--slate);color:#fff;}
+.sm.todo{background:#E8E3D3;color:#A8A496;}
+.sm-line{flex:1;height:2px;background:#E8E3D3;}
+.sm-line.on{background:var(--orange);}
+
+/* confirm */
+.cf-ico{width:78px;height:78px;border-radius:50%;background:rgba(220,83,24,.1);display:flex;align-items:center;justify-content:center;margin:30px auto 18px;}
+.cf-ico .inner{width:54px;height:54px;border-radius:50%;background:var(--orange);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(220,83,24,.4);}
+.cf-h{text-align:center;font-size:20px;font-weight:800;margin-bottom:5px;}
+.cf-s{text-align:center;font-size:12px;color:#9CA3AF;margin-bottom:20px;}
+.tkt{background:var(--white);border-radius:18px;padding:17px;box-shadow:0 10px 30px rgba(50,58,68,.09);}
+.tkt-r{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;}
+.tkt-c{font-size:24px;font-weight:800;color:var(--slate);}
+.tkt-l{font-size:9px;color:#9CA3AF;}
+.tkt-line{border-top:1.5px dashed #E0DBC8;margin:14px 0;position:relative;}
+.tkt-line::before,.tkt-line::after{content:'';position:absolute;top:-9px;width:18px;height:18px;border-radius:50%;background:var(--bg);}
+.tkt-line::before{right:-26px;}
+.tkt-line::after{left:-26px;}
+.tkt-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;}
+.tkt-i .l{font-size:9px;color:#9CA3AF;}
+.tkt-i .v{font-size:12px;font-weight:700;color:var(--slate);}
+.tkt-ref{text-align:center;margin-top:15px;padding-top:14px;border-top:1px solid #F0ECE0;}
+.tkt-ref .l{font-size:9px;color:#9CA3AF;}
+.tkt-ref .n{font-size:18px;font-weight:800;color:var(--orange);letter-spacing:2px;}
+.note-pill{background:rgba(244,236,194,.5);border:1px solid #E8DFB8;border-radius:12px;padding:10px 13px;font-size:10px;color:#8A7B3A;margin-top:13px;text-align:center;font-weight:600;}
+
+/* trips */
+.tab-row{display:flex;gap:7px;margin-bottom:14px;}
+.tab{font-size:11px;font-weight:600;padding:7px 15px;border-radius:20px;background:var(--white);color:#9CA3AF;box-shadow:0 2px 8px rgba(50,58,68,.04);}
+.tab.on{background:var(--orange);color:#fff;}
+.trip{background:var(--white);border-radius:16px;padding:14px;margin-bottom:11px;box-shadow:0 4px 16px rgba(50,58,68,.06);}
+.trip-st{font-size:8px;font-weight:700;padding:2px 9px;border-radius:6px;display:inline-block;margin-bottom:9px;}
+.trip-st.up{background:rgba(220,83,24,.12);color:var(--orange);}
+.trip-st.past{background:#EFEDE3;color:#9CA3AF;}
+.trip-route{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;margin-bottom:5px;}
+.trip-route .ar{color:var(--orange);}
+.trip-meta{font-size:10px;color:#9CA3AF;}
+
+/* profile */
+.pf-top{text-align:center;padding:14px 0 18px;}
+.pf-av{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--orange),#E8743F);display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:800;color:#fff;margin:0 auto 11px;box-shadow:0 10px 26px rgba(220,83,24,.32);}
+.pf-n{font-size:17px;font-weight:800;}
+.pf-p{font-size:11px;color:#9CA3AF;}
+.pf-menu{background:var(--white);border-radius:18px;padding:5px 15px;box-shadow:0 4px 16px rgba(50,58,68,.06);}
+.pf-item{display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:1px solid #F2EFE4;}
+.pf-item:last-child{border-bottom:none;}
+.pf-l{display:flex;align-items:center;gap:11px;font-size:13px;font-weight:500;}
+.pf-l svg{width:18px;height:18px;}
+.pf-ar{color:#D0CCBE;font-size:14px;}
+
+/* bottom nav */
+.bnav{position:absolute;bottom:0;left:0;right:0;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);display:flex;justify-content:space-around;padding:11px 0 16px;border-top:1px solid #F0ECE0;}
+.bn{display:flex;flex-direction:column;align-items:center;gap:3px;}
+.bn svg{width:21px;height:21px;}
+.bn .l{font-size:8px;color:#B0AC9E;}
+.bn.on svg path,.bn.on svg circle,.bn.on svg rect{stroke:var(--orange);}
+.bn.on .l{color:var(--orange);font-weight:700;}
+
+/* splash */
+.splash{height:100%;background:var(--slate);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.splash::before{content:'';position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(220,83,24,.25),transparent 70%);}
+.splash-logo{width:88px;height:88px;border-radius:26px;background:var(--orange);display:flex;align-items:center;justify-content:center;box-shadow:0 18px 44px rgba(220,83,24,.5);position:relative;z-index:2;margin-bottom:22px;}
+.splash-logo svg{width:46px;height:46px;}
+.splash-n{font-size:26px;font-weight:800;color:var(--cream);position:relative;z-index:2;}
+.splash-s{font-size:12px;color:rgba(244,236,194,.45);position:relative;z-index:2;margin-top:4px;}
+
+/* login */
+.login{padding:40px 22px;height:100%;display:flex;flex-direction:column;}
+.login-logo{width:60px;height:60px;border-radius:18px;background:var(--orange);display:flex;align-items:center;justify-content:center;margin-bottom:30px;box-shadow:0 12px 30px rgba(220,83,24,.34);}
+.login-logo svg{width:31px;height:31px;}
+.login h2{font-size:24px;font-weight:800;margin-bottom:7px;}
+.login p{font-size:13px;color:#9CA3AF;margin-bottom:32px;}
+.login-fld{background:var(--white);border-radius:14px;padding:14px 15px;box-shadow:0 4px 16px rgba(50,58,68,.06);display:flex;align-items:center;gap:11px;margin-bottom:14px;}
+.login-fld .cc{font-size:14px;font-weight:700;color:var(--slate);padding-left:11px;border-left:1px solid #EEE8D6;}
+.login-fld .ph{font-size:14px;color:#C4C0B2;}
+
+/* FINANCIAL */
+.fin-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:48px;}
+.fin-card{background:var(--white);border-radius:24px;padding:32px 26px;border:1px solid #EFEBDD;position:relative;overflow:hidden;}
+.fin-card.feat{background:var(--slate);}
+.fin-card .tag{font-size:13px;font-weight:600;color:#9CA3AF;margin-bottom:14px;}
+.fin-card.feat .tag{color:rgba(244,236,194,.6);}
+.fin-amt{font-size:42px;font-weight:800;color:var(--slate);line-height:1;}
+.fin-card.feat .fin-amt{color:var(--cream);}
+.fin-unit{font-size:13px;color:#9CA3AF;margin-top:7px;margin-bottom:22px;}
+.fin-card.feat .fin-unit{color:rgba(244,236,194,.5);}
+.fin-list{list-style:none;}
+.fin-list li{font-size:13px;color:#6B7280;padding:7px 0;display:flex;align-items:center;gap:9px;font-weight:300;}
+.fin-card.feat .fin-list li{color:rgba(244,236,194,.75);}
+.fin-list li svg{width:15px;height:15px;flex-shrink:0;}
+.fin-card .accent-line{position:absolute;top:0;right:0;left:0;height:4px;background:var(--orange);}
+.fin-later{background:rgba(244,236,194,.45);border:1px dashed #D8C98A;color:#8A7B3A;border-radius:10px;padding:9px;font-size:12px;font-weight:600;text-align:center;margin-top:6px;}
+
+.total-bar{background:var(--slate);border-radius:24px;padding:34px 40px;margin-top:26px;display:flex;justify-content:space-between;align-items:center;position:relative;overflow:hidden;}
+.total-bar::before{content:'';position:absolute;top:-80px;left:-40px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(220,83,24,.2),transparent 70%);}
+.total-bar .l{position:relative;z-index:2;}
+.total-bar .lt{font-size:13px;color:rgba(244,236,194,.55);margin-bottom:5px;}
+.total-bar .lv{font-size:14px;color:rgba(244,236,194,.7);font-weight:300;}
+.total-bar .amt{font-size:44px;font-weight:800;color:var(--cream);position:relative;z-index:2;}
+.total-bar .amt span{font-size:18px;}
+
+/* timeline */
+.tl{display:flex;gap:20px;margin-top:44px;}
+.tl-card{flex:1;background:var(--white);border-radius:22px;padding:30px 26px;border:1px solid #EFEBDD;position:relative;}
+.tl-num{position:absolute;top:24px;left:26px;font-size:48px;font-weight:800;color:#F2EFE4;line-height:1;}
+.tl-ph{font-size:12px;font-weight:700;color:var(--orange);margin-bottom:7px;position:relative;z-index:2;}
+.tl-card h4{font-size:20px;font-weight:800;margin-bottom:9px;position:relative;z-index:2;}
+.tl-dur{font-size:12px;color:#9CA3AF;display:flex;align-items:center;gap:6px;position:relative;z-index:2;}
+.tl-dur svg{width:14px;height:14px;}
+
+.deliver-note{background:rgba(220,83,24,.08);border:1px solid rgba(220,83,24,.2);border-radius:16px;padding:18px 22px;margin-top:24px;display:flex;align-items:center;gap:14px;}
+.deliver-note svg{width:24px;height:24px;flex-shrink:0;}
+.deliver-note p{font-size:14px;color:var(--slate);font-weight:500;}
+
+/* footer */
+.foot{background:var(--slate);padding:46px 0;text-align:center;}
+.foot .fn{font-size:18px;font-weight:800;color:var(--cream);margin-bottom:7px;}
+.foot .fs{font-size:12px;color:rgba(244,236,194,.4);}
+
+@media(max-width:900px){
+  .hero h1{font-size:40px;}
+  .idea-grid,.fin-grid{grid-template-columns:1fr;}
+  .steps-row{grid-template-columns:repeat(2,1fr);gap:30px;}
+  .tl{flex-direction:column;}
+  .total-bar{flex-direction:column;gap:20px;text-align:center;}
+  .sec-title{font-size:28px;}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="brand-mark">
+      <div class="logo-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#F4ECC2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+      </div>
+      <div>
+        <div class="brand-name">أسهل الطريق</div>
+        <div class="brand-sub">Ashal Al-Tareeq</div>
+      </div>
+    </div>
+    <div class="hero-tag">عرض المشروع · 2026</div>
+    <h1>حجز رحلتك الجوية<br><span>أصبح أسهل</span></h1>
+    <p>تطبيق ذكي لحجز تذاكر الطيران الليبي مباشرة من هاتفك — تستعرض الرحلات، تقارن الأسعار، وتقدّم طلبك في دقائق.</p>
+    <div class="hero-stats">
+      <div class="hstat"><div class="n">٩</div><div class="l">شاشات أساسية</div></div>
+      <div class="hstat"><div class="n">iOS + Android</div><div class="l">نظامان</div></div>
+      <div class="hstat"><div class="n">عربي</div><div class="l">بالكامل</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- IDEA -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-label">الفكرة</div>
+    <div class="sec-title">ما هو تطبيق أسهل الطريق؟</div>
+    <div class="sec-desc">تطبيق بسيط وأنيق يتيح للمسافر الليبي حجز تذكرة طيرانه دون عناء — يستعرض الرحلات المتاحة ويقدّم طلب حجز مبدئي، ثم يكمل التأكيد والدفع عند زيارة المكتب.</div>
+    <div class="idea-grid">
+      <div class="idea-card">
+        <div class="idea-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+        <h3>استعراض سهل</h3>
+        <p>ابحث عن رحلتك باختيار الوجهة والتاريخ، وشاهد كل الرحلات المتاحة في مكان واحد.</p>
+      </div>
+      <div class="idea-card">
+        <div class="idea-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h12"/></svg></div>
+        <h3>مقارنة واضحة</h3>
+        <p>قارن بين أوقات الرحلات والأسعار بين شركات الطيران المختلفة بنظرة واحدة.</p>
+      </div>
+      <div class="idea-card">
+        <div class="idea-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3>طلب مبدئي</h3>
+        <p>قدّم طلب حجزك من الهاتف، وأكمل الدفع والتأكيد بكل اطمئنان عند حضورك للمكتب.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="sec" style="padding-top:20px;">
+  <div class="wrap">
+    <div class="steps">
+      <div class="steps-head">
+        <div class="sec-label">كيف يعمل</div>
+        <h2>رحلة المستخدم في 4 خطوات</h2>
+      </div>
+      <div class="steps-row">
+        <div class="step">
+          <div class="step-num"><svg viewBox="0 0 24 24" fill="none" stroke="#F4ECC2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+          <h4>ابحث</h4>
+          <p>اختر الوجهة والتاريخ</p>
+        </div>
+        <div class="step">
+          <div class="step-num"><svg viewBox="0 0 24 24" fill="none" stroke="#F4ECC2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h12"/></svg></div>
+          <h4>قارن واختر</h4>
+          <p>تصفّح الرحلات المتاحة</p>
+        </div>
+        <div class="step">
+          <div class="step-num"><svg viewBox="0 0 24 24" fill="none" stroke="#F4ECC2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+          <h4>قدّم الطلب</h4>
+          <p>أدخل بياناتك بسهولة</p>
+        </div>
+        <div class="step accent">
+          <div class="step-num"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg></div>
+          <h4>أكمل بالحضور</h4>
+          <p>ادفع وأكّد في المكتب</p>
+          <span class="step-badge">التأكيد النهائي</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCREENS -->
+<section class="sec screens-sec">
+  <div class="wrap">
+    <div class="sec-label">التصميم</div>
+    <div class="sec-title">شاشات التطبيق</div>
+    <div class="sec-desc">تصميم أنيق ونظيف مستوحى من معايير أنظمة آبل — اسحب لاستعراض الشاشات.</div>
+  </div>
+  <div class="wrap">
+  <div class="phones">
+
+    <!-- 1 SPLASH -->
+    <div class="phone">
+      <div class="device"><div class="scr">
+        <div class="splash">
+          <div class="splash-logo"><svg viewBox="0 0 24 24" fill="none" stroke="#F4ECC2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></div>
+          <div class="splash-n">أسهل الطريق</div>
+          <div class="splash-s">حجز الرحلات الجوية الليبية</div>
+        </div>
+      </div></div>
+      <div class="phone-label">شاشة البداية<span>Splash</span></div>
+    </div>
+
+    <!-- 2 LOGIN -->
+    <div class="phone">
+      <div class="device"><div class="scr">
+        <div class="login">
+          <div class="login-logo"><svg viewBox="0 0 24 24" fill="none" stroke="#F4ECC2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></div>
+          <h2>مرحباً بك</h2>
+          <p>سجّل دخولك برقم هاتفك للبدء</p>
+          <div class="login-fld"><span class="cc">218+</span><span class="ph">91 234 5678</span></div>
+          <div class="btn-pri">إرسال رمز التحقق</div>
+        </div>
+      </div></div>
+      <div class="phone-label">تسجيل الدخول<span>برقم الهاتف</span></div>
+    </div>
+
+    <!-- 3 HOME / SEARCH -->
+    <div class="phone">
+      <div class="device"><div class="scr">
+        <div class="sb"><span>9:41</span><span>●●●</span></div>
+        <div class="sbody">
+          <div class="s-h">أين تريد السفر؟</div>
+          <div class="s-sub">ابحث عن رحلتك القادمة</div>
+          <div class="scard">
+            <div class="fld"><span class="dot" style="background:var(--orange)"></span><div><div class="ft">من</div><div class="fv">طرابلس · TIP</div></div></div>
+            <div class="swap"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#DC5318" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10l5-5 5 5M7 14l5 5 5-5"/></svg></div>
+            <div class="fld"><span class="dot" style="background:var(--slate)"></span><div><div class="ft">إلى</div><div class="fv">بنغازي · BEN</div></div></div>
+            <div class="fld-grid">
+              <div class="fld"><div><div class="ft">التاريخ</div><div class="fv">15 يناير</div></div></div>
+              <div class="fld"><div><div class="ft">المسافرون</div><div class="fv">1 شخص</div></div></div>
+            </div>
+            <div class="btn-pri">ابحث عن رحلات</div>
+          </div>
+        </div>
+        <div class="bnav">
+          <div class="bn on"><svg viewBox="0 0 24 24" fill="none" stroke="#DC5318" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span class="l">الرئيسية</span></div>
+          <div class="bn"><svg viewBox="0 0 24 24" fill="none" stroke="#B0AC9E" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg><span class="l">رحلاتي</span></div>
+          <div class="bn"><svg viewBox="0 0 24 24" fill="none" stroke="#B0AC9E" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg><span class="l">حسابي</span></div>
+        </div>
+      </div></div>
+      <div class="phone-label">الرئيسية<span>البحث</span></div>
+    </div>
+
+    <!-- 4 RESULTS -->
+    <div class="phone">
+      <div class="device"><div class="scr">
+        <div class="sb"><span>9:43</span><span>●●●</span></div>
+        <div class="sbody">
+          <div class="s-h">طرابلس ← بنغازي</div>
+          <div class="s-sub">15 يناير · رحلة واحدة</div>
+          <div class="fr best">
+            <span class="fr-badge">الأنسب</span>
+            <div class="fr-top"><div class="al-logo" style="background:#1A6B3C">LA</div><div><div class="al-name">الجوية الليبية</div><div class="al-sub">رحلة مباشرة</div></div></div>
+            <div class="fr-times"><div><div class="tm">07:30</div><div class="ap">TIP</div></div><div class="fr-mid"><div class="d">1س 10د</div><div class="fr-line"></div><div class="d">مباشر</div></div><div style="text-align:left"><div class="tm">08:40</div><div class="ap">BEN</div></div></div>
+            <div class="fr-bot"><div><div class="pr">320 د.ل</div><div class="pr-l">للشخص</div></div><div class="sel-btn">اختر</div></div>
+          </div>
+          <div class="fr">
+            <div class="fr-top"><div class="al-logo" style="background:#DC5318">BU</div><div><div class="al-name">براق للطيران</div><div class="al-sub">رحلة مباشرة</div></div></div>
+            <div class="fr-times"><div><div class="tm">11:00</div><div class="ap">TIP</div></div><div class="fr-mid"><div class="d">1س 15د</div><div class="fr-line"></div><div class="d">مباشر</div></div><div style="text-align:left"><div class="tm">12:15</div><div class="ap">BEN</div></div></div>
+            <div class="fr-bot"><div><div class="pr">285 د.ل</div><div class="pr-l">للشخص</div></div><div class="sel-btn">اختر</div></div>
+          </div>
+        </div>
+        <div class="bnav">
+          <div class="bn on"><svg viewBox="0 0 24 24" fill="none" stroke="#DC5318" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span class="l">الرئيسية</span></div>
+          <div class="bn"><svg viewBox="0 0 24 24" fill="none" stroke="#B0AC9E" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg><span class="l">رحلاتي</span></div>
+          <div class="bn"><svg viewBox="0 0 24 24" fill="none" stroke="#B0AC9E" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg><span class="l">حسابي</span></div>
+        </div>
+      </div></div>
+      <div class="phone-label">نتائج البحث<span>الرحلات المتاحة</span></div>
+    </div>
+
+    <!-- 5 DETAIL -->
+    <div class="phone">
+      <div class="device"><div class="scr">
+        <div class="sb" style="color:#fff;"><span>9:44</span><span>●●●</span></div>
+        <div class="sbody">
+          <div class="dhead">
+            <div style="font-size:10px;color:rgba(244,236,194,.6);margin-bottom:10px;">الجوية الليبية · LA 201</div>
+            <div class="r"><div><div class="tm">07:30</div><div class="ap">TIP</div></div><div class="fr-mid"><div class="mid">1س 10د</div><div class="pl"></div><div class="mid">مباشر</div></div><div style="text-align:left"><div class="tm">08:40</div><div class="ap">BEN</div></div></div>
+          </div>
+          <div class="amen">
+            <div class="am"><svg viewBox="0 0 24 24" fill="none" stroke="#DC5318" stroke-width="2" stroke-linecap="round"><path d="M6 2h12l-1 9H7zM7 11v11M17 11v11M5 22h14"/></svg><div class="t">20 كغ</div></div>
+            <div class="am"><svg viewBox="0 0 24 24" fill="none" stroke="#DC5318" stroke-width="2" stroke-linecap="round"><path d="M3 11h18M5 11V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4M4 16h16M6 20h12"/></svg><div class="t">وجبة</div></div>
+            <div class="am"><svg viewBox="0 0 24 24" fill="none" stroke="#DC5318" stroke-width="2" stroke-linecap="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg><div class="t">اقتصادية</div></div>
+          </div>
+          <div class="psum">
+            <div class="prow"><span>سعر التذكرة</span><span>320 د.ل</span></div>
+            <div class="prow"><span>رسوم المطار</span><span>45 د.ل</span></div>
+            <div class="prow"><span>رسوم الخدمة</span><span>15 د.ل</span></div>
+            <div class="ptot"><span>الإجمالي</span><span class="v">380 د.ل</span></div>
+          </div>
+          <div class="btn-pri" style="margin-top:13px;">متابعة الحجز</div>
+        </div>
+      </div></div>
+      <div class="phone-label">تفاصيل الرحلة<span>المعلومات الكاملة</span></div>
+    </div>
+
+    <!-- 6 PASSENGER -->
+    <div class="phone">
+      <div class="device"><div class="scr">
+        <div class="sb"><span>9:46</span><span>●●●</span></div>
+        <div class="sbody">
+          <div class="s-h" style="margin-top:10px;">بيانات المسافر</div>
+          <div class="steps-mini" style="margin-top:14px;">
+            <div class="sm done">✓</div><div class="sm-line on"></div>
+            <div class="sm cur">2</div><div class="sm-line"></div>
+            <div class="sm todo">3</div>
+          </div>
+          <div class="inp"><div class="l">الاسم الكامل</div><div class="v">طلال محمد عاشور</div></div>
+          <div class="inp"><div class="l">رقم الهوية / الجواز</div><div class="v">119820045</div></div>
+          <div class="inp ph"><div class="l">رقم الهاتف</div><div class="v">91 234 5678</div></div>
+          <div class="inp ph"><div class="l">البريد الإلكتروني (اختياري)</div><div class="v">example@mail.com</div></div>
+          <div class="btn-pri" style="margin-top:13px;">مراجعة الطلب</div>
+        </div>
+      </div></div>
+      <div class="phone-label">بيانات المسافر<span>إدخال المعلومات</span></div>
+    </div>
+
+    <!-- 7 CONFIRM -->
+    <div class="phone">
+      <div class="device"><div class="scr">
+        <div class="sb"><span>9:55</span><span>●●●</span></div>
+        <div class="sbody">
+          <div class="cf-ico"><div class="inner"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div></div>
+          <div class="cf-h">تم استلام طلبك!</div>
+          <div class="cf-s">احتفظ بالرقم المرجعي لإتمام الحجز</div>
+          <div class="tkt">
+            <div class="tkt-r"><div><div class="tkt-c">TIP</div><div class="tkt-l">طرابلس</div></div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#DC5318" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top:6px;"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg><div style="text-align:left"><div class="tkt-c">BEN</div><div class="tkt-l">بنغازي</div></div></div>
+            <div class="tkt-line"></div>
+            <div class="tkt-grid">
+              <div class="tkt-i"><div class="l">التاريخ</div><div class="v">15 يناير 2025</div></div>
+              <div class="tkt-i"><div class="l">الإقلاع</div><div class="v">07:30</div></div>
+              <div class="tkt-i"><div class="l">الشركة</div><div class="v">الجوية الليبية</div></div>
+              <div class="tkt-i"><div class="l">المسافر</div><div class="v">طلال م.</div></div>
+            </div>
+            <div class="tkt-ref"><div class="l">الرقم المرجعي</div><div class="n">LY-482761</div></div>
+          </div>
+          <div class="note-pill">يُرجى الحضور للمكتب خلال 24 ساعة لإتمام الدفع والتأكيد</div>
+        </div>
+      </div></div>
+      <div class="phone-label">تأكيد الطلب<span>الرقم المرجعي</span></div>
+    </div>
+
+    <!-- 8 TRIPS -->
+    <div class="phone">
+      <div class="device"><div class="scr">
+        <div class="sb"><span>10:00</span><span>●●●</span></div>
+        <div class="sbody">
+          <div class="s-h">رحلاتي</div>
+          <div class="s-sub" style="margin-bottom:14px;">سجل طلباتك</div>
+          <div class="tab-row"><div class="tab on">القادمة</div><div class="tab">السابقة</div></div>
+          <div class="trip">
+            <span class="trip-st up">بانتظار التأكيد</span>
+            <div class="trip-route">طرابلس<span class="ar">←</span>بنغازي</div>
+            <div class="trip-meta">15 يناير · 07:30 · LA 201 · LY-482761</div>
+          </div>
+          <div class="trip">
+            <span class="trip-st past">مكتملة</span>
+            <div class="trip-route">بنغازي<span class="ar">←</span>طرابلس</div>
+            <div class="trip-meta">20 ديسمبر 2024 · 14:00 · BU 315</div>
+          </div>
+          <div class="trip">
+            <span class="trip-st past">مكتملة</span>
+            <div class="trip-route">طرابلس<span class="ar">←</span>سبها</div>
+            <div class="trip-meta">5 نوفمبر 2024 · 09:15 · LA 405</div>
+          </div>
+        </div>
+        <div class="bnav">
+          <div class="bn"><svg viewBox="0 0 24 24" fill="none" stroke="#B0AC9E" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span class="l">الرئيسية</span></div>
+          <div class="bn on"><svg viewBox="0 0 24 24" fill="none" stroke="#DC5318" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg><span class="l">رحلاتي</span></div>
+          <div class="bn"><svg viewBox="0 0 24 24" fill="none" stroke="#B0AC9E" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg><span class="l">حسابي</span></div>
+        </div>
+      </div></div>
+      <div class="phone-label">رحلاتي<span>سجل الطلبات</span></div>
+    </div>
+
+    <!-- 9 PROFILE -->
+    <div class="phone">
+      <div class="device"><div class="scr">
+        <div class="sb"><span>10:02</span><span>●●●</span></div>
+        <div class="sbody">
+          <div class="pf-top">
+            <div class="pf-av">ط</div>
+            <div class="pf-n">طلال محمد عاشور</div>
+            <div class="pf-p">+218 91 234 5678</div>
+          </div>
+          <div class="pf-menu">
+            <div class="pf-item"><div class="pf-l"><svg viewBox="0 0 24 24" fill="none" stroke="#DC5318" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg>الملف الشخصي</div><span class="pf-ar">‹</span></div>
+            <div class="pf-item"><div class="pf-l"><svg viewBox="0 0 24 24" fill="none" stroke="#DC5318" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h4M7 12h2"/></svg>وثائقي وجوازاتي</div><span class="pf-ar">‹</span></div>
+            <div class="pf-item"><div class="pf-l"><svg viewBox="0 0 24 24" fill="none" stroke="#DC5318" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>الإشعارات</div><span class="pf-ar">‹</span></div>
+            <div class="pf-item"><div class="pf-l"><svg viewBox="0 0 24 24" fill="none" stroke="#DC5318" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>المساعدة والدعم</div><span class="pf-ar">‹</span></div>
+          </div>
+        </div>
+        <div class="bnav">
+          <div class="bn"><svg viewBox="0 0 24 24" fill="none" stroke="#B0AC9E" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span class="l">الرئيسية</span></div>
+          <div class="bn"><svg viewBox="0 0 24 24" fill="none" stroke="#B0AC9E" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg><span class="l">رحلاتي</span></div>
+          <div class="bn on"><svg viewBox="0 0 24 24" fill="none" stroke="#DC5318" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg><span class="l">حسابي</span></div>
+        </div>
+      </div></div>
+      <div class="phone-label">الملف الشخصي<span>الحساب والإعدادات</span></div>
+    </div>
+
+  </div>
+  </div>
+</section>
+
+<!-- FINANCIAL -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-label">العرض المالي</div>
+    <div class="sec-title">تكلفة المشروع</div>
+    <div class="sec-desc">عرض شفّاف وواضح لتكاليف تطوير التطبيق وتشغيله.</div>
+    <div class="fin-grid">
+      <div class="fin-card feat">
+        <div class="accent-line"></div>
+        <div class="tag">تطوير التطبيق</div>
+        <div class="fin-amt">13,000</div>
+        <div class="fin-unit">دينار ليبي</div>
+        <ul class="fin-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#DC5318" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>تطبيق متكامل لـ iOS و Android</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#DC5318" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>تصميم احترافي بالكامل</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#DC5318" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>ربط مع أنظمة الحجز</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#DC5318" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>نظام إدارة الطلبات</li>
+        </ul>
+      </div>
+      <div class="fin-card">
+        <div class="tag">الرفع على المنصات</div>
+        <div class="fin-amt" style="font-size:30px;color:#DC5318;">يُتّفق لاحقاً</div>
+        <div class="fin-unit">App Store · Google Play</div>
+        <ul class="fin-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#DC5318" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>متجر آبل (iOS)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#DC5318" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>متجر جوجل (Android)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#DC5318" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>إعداد الحسابات والمتابعة</li>
+        </ul>
+        <div class="fin-later">سيتم التفاهم فيها لاحقاً</div>
+      </div>
+      <div class="fin-card">
+        <div class="tag">السيرفر السنوي</div>
+        <div class="fin-amt">875</div>
+        <div class="fin-unit">دينار ليبي / سنة</div>
+        <ul class="fin-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#DC5318" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>ليبيان سبايدر — Godzilla</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#DC5318" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>استضافة ليبية موثوقة</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#DC5318" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>دعم فني محلي</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#DC5318" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>يُجدّد سنوياً</li>
+        </ul>
+      </div>
+      <div class="fin-card">
+        <div class="tag">رسائل التحقق (OTP)</div>
+        <div class="fin-amt" style="font-size:30px;color:#DC5318;">حسب المزوّد</div>
+        <div class="fin-unit">تُحتسب لكل رسالة تُرسل</div>
+        <ul class="fin-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#DC5318" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>رمز تحقق عند تسجيل الدخول</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#DC5318" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>السعر يختلف بين شركات الخدمة</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#DC5318" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>تكلفة تشغيلية متغيرة</li>
+        </ul>
+        <div class="fin-later">حسب أسعار الشركة المزوّدة للخدمة</div>
+      </div>
+    </div>
+
+    <div class="total-bar">
+      <div class="l">
+        <div class="lt">إجمالي البدء (التطوير + السيرفر)</div>
+        <div class="lv">الرفع على المنصات ورسائل التحقق تُحتسب لاحقاً حسب المزوّد</div>
+      </div>
+      <div class="amt">13,875 <span>دينار ليبي</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="sec" style="padding-top:0;">
+  <div class="wrap">
+    <div class="sec-label">الجدول الزمني</div>
+    <div class="sec-title">مدة التنفيذ</div>
+    <div class="sec-desc">خطة واضحة من البداية حتى التسليم.</div>
+    <div class="tl">
+      <div class="tl-card">
+        <div class="tl-num">1</div>
+        <div class="tl-ph">المرحلة الأولى</div>
+        <h4>التصميم والإعداد</h4>
+        <div class="tl-dur"><svg viewBox="0 0 24 24" fill="none" stroke="#DC5318" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>ضمن مدة التسليم</div>
+      </div>
+      <div class="tl-card">
+        <div class="tl-num">2</div>
+        <div class="tl-ph">المرحلة الثانية</div>
+        <h4>البناء والاختبار</h4>
+        <div class="tl-dur"><svg viewBox="0 0 24 24" fill="none" stroke="#DC5318" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>2 — 4 أسابيع</div>
+      </div>
+      <div class="tl-card">
+        <div class="tl-num">3</div>
+        <div class="tl-ph">المرحلة الثالثة</div>
+        <h4>التسليم والإطلاق</h4>
+        <div class="tl-dur"><svg viewBox="0 0 24 24" fill="none" stroke="#DC5318" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>بعد البناء</div>
+      </div>
+    </div>
+
+    <div class="deliver-note">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#DC5318" stroke-width="2"><path d="M12 9v4M12 17h.01"/><circle cx="12" cy="12" r="10"/></svg>
+      <p><strong>مدة التسليم: من أسبوعين إلى 4 أسابيع.</strong> أما مدة الرفع والمراجعة على متجري آبل وجوجل فهي تابعة لسياسة المتجرين وليست ضمن مدة التسليم.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="fn">أسهل الطريق</div>
+  <div class="fs">عرض المشروع · 2026 · جميع الحقوق محفوظة</div>
+</footer>
+
+</body>
+</html>
